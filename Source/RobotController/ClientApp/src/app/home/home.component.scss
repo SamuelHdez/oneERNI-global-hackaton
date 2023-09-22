@@ -9,7 +9,7 @@
     padding: 16px;
     overflow: hidden;
 
-    #img-status-no-connection {
+    #img-status-connection {
       width: 80vh;
       overflow: hidden;
     }
@@ -21,6 +21,11 @@
       color: #ffffff;
       background-color: rgb(255, 59, 48, 0.75);
       padding: 8px;
+
+      &.connected {
+        background-color: rgb(52, 199, 89, 0.75);
+      }
+
     }
   }
 }

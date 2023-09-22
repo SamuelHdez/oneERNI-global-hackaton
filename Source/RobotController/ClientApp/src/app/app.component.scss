@@ -21,11 +21,16 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
+  background-color: #16222A;
   background-color: rgb(28, 28, 30);
   color: white;
   text-align: center;
   padding: 16px;
   height: 10vh;
+  background-image: url('../assets/images/footer.png');
+  background-repeat: repeat round;
+  // border-top: rgb(28, 28, 30, 0.5) 2px solid;
+  z-index: 9999;
 }
 
 

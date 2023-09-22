@@ -7,11 +7,6 @@ namespace RobotController.Controllers
     [Route("api/[controller]")]
     public class AboutController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
         private readonly ILogger<AboutController> _logger;
 
         public AboutController(ILogger<AboutController> logger)

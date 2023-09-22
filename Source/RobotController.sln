@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RobotController", "RobotCon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotController.Domain", "RobotController.Domain\RobotController.Domain.csproj", "{52C1BCE8-835F-4DE7-AEC1-4794086BB854}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotController.Services", "RobotController.Services\RobotController.Services.csproj", "{71BE76AA-ADBE-4160-8BCF-42F223900F91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{52C1BCE8-835F-4DE7-AEC1-4794086BB854}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52C1BCE8-835F-4DE7-AEC1-4794086BB854}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52C1BCE8-835F-4DE7-AEC1-4794086BB854}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71BE76AA-ADBE-4160-8BCF-42F223900F91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71BE76AA-ADBE-4160-8BCF-42F223900F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71BE76AA-ADBE-4160-8BCF-42F223900F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71BE76AA-ADBE-4160-8BCF-42F223900F91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
