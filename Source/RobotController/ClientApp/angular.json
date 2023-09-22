@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "RobotController"
+  "defaultProject": "RobotController",
+  "cli": {
+    "analytics": false
+  }
 }

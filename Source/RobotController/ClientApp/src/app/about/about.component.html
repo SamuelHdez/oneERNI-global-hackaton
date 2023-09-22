@@ -1,0 +1,13 @@
+<div id="about-component">
+  <div class="section">
+    <div class="team-member" *ngFor="let member of this.teamMembers">
+      <!-- <div id="team-name">{{member.name}}</div> -->
+      <img class="team-avatar" src="{{member.avatar}}" alt="Responsive image">
+      <div class="team-description">
+        <div class="team-name">{{member.name}}</div>
+        <div class="team-nickname">{{member.nickname}}</div>
+        <div class="team-description">{{member.description}}</div>
+      </div>
+    </div>
+  </div>
+</div>

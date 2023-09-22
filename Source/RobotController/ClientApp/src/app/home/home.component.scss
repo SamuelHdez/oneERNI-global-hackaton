@@ -1,0 +1,26 @@
+#home-component {
+  margin-top: 60px;
+
+  .section {
+    margin: 16px auto;
+    background-color: rgb(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 500px;
+    padding: 16px;
+    overflow: hidden;
+
+    #img-status-no-connection {
+      width: 80vh;
+      overflow: hidden;
+    }
+
+    #status-text {
+      margin: -16px;
+      text-align: center;
+      font-size: 20px;
+      color: #ffffff;
+      background-color: rgb(255, 59, 48, 0.75);
+      padding: 8px;
+    }
+  }
+}

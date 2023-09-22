@@ -1,0 +1,52 @@
+#about-component {
+
+  .section {
+    display: flex;
+    margin: 24px;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: flex-start;
+
+    .team-member {
+      list-style: none;
+      flex: 1;
+      margin: 16px auto;
+      background-color: rgb(0, 0, 0, 0.5);
+      border-radius: 10px;
+      padding: 16px;
+      padding-bottom: 0;
+      display: flex;
+      width: auto;
+
+      .team-avatar {
+        width: auto;
+        height: 250px;
+      }
+
+      .team-description {
+        //flex: 1;
+        min-width: 300px;
+        max-width: 300px;
+        text-align: start;
+
+        .team-name {
+          font-size: 20px;
+          color: #ffffff;
+        }
+
+        .team-nickname {
+          font-size: 14px;
+          color: #ffffff67;
+          border-bottom: 1px solid #ffffff67;
+        }
+
+        .team-description {
+          font-size: 14px;
+          color: #ffffff;
+          margin-top: 12px;
+        }
+      }
+
+    }
+  }
+}
