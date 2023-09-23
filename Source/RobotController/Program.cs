@@ -1,5 +1,6 @@
+using RobotController.Services;
 using RobotController.Services.Hubs;
-
+using RobotController.Infrastructure.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,13 +20,14 @@ builder.Services.AddCors(options =>
     });
 });
 
+// Add configuration
+builder.Services.Configure<RobotApiOptions>(builder.Configuration.GetSection("RobotApi"));
 
-
-
-builder.Services.AddSignalR();
 // Add services to the container.
-
+builder.Services.AddSignalR();
+builder.Services.AddScoped<IRobotService, RobotService>();
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpClient<RobotService>();
 
 var app = builder.Build();
 
@@ -51,14 +53,11 @@ app.MapFallbackToFile("index.html"); ;
 
 app.MapHub<CommunicationHub>("/hub");
 
-
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}");
 
 app.MapFallbackToFile("index.html");
-
 
 
 app.Run();
