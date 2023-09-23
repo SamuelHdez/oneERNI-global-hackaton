@@ -31,7 +31,7 @@ namespace RobotController.Controllers
                     Name = "Ferran Balaguer",
                     Nickname = "All-terrain developer",
                     Description = "Hi, I’m Ferran! 🦖 With 5 years at ERNI, I’m something of a dinosaur – but not the extinct kind, the coding kind!\nI’ve been programming for as long as I can remember, maybe even before I learned to tie my shoes! 👟💻 I’ve seen programming languages come and go, and I’ve battled more bugs than a prehistoric creature. With every line of code, I bring a bit of ancient wisdom and a whole lot of experience\nLet’s make this hackathon go down in history! 🌋💾",
-                    Avatar = "../../assets/images/samuel.png"
+                    Avatar = "../../assets/images/ferran.png"
                 },
                 new TeamMember
                 {

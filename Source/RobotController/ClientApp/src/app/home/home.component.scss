@@ -1,5 +1,16 @@
 #home-component {
-  margin-top: 60px;
+  margin-top: 20px;
+
+  #erni-global-img {
+    width: 40vh;
+    margin-bottom: 16px;
+    opacity: 0.5;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 
   .section {
     margin: 16px auto;
@@ -17,11 +28,11 @@
       text-align: left;
       font-size: 20px;
       color: #ffffff;
-      background-color: rgb(255, 59, 48, 0.75);
+      background-color: rgb(255, 59, 48, 0.5);
       padding: 8px;
 
       &.connected {
-        background-color: rgb(52, 199, 89, 0.75);
+        background-color: rgb(52, 199, 89, 0.5);
       }
 
     }
@@ -45,11 +56,14 @@
         flex-direction: column;
         overflow: hidden;
         border-right: 2px solid rgb(255, 255, 255, 0.5);
-
+        min-width: 320px;
+        min-height: 240px;
+        max-height: 300px;
         .cam-container {
           border: 2px solid #ffffff;
           width: 320px;
           height: 240px;
+          
           flex: 1;
           border-radius: 5px;
 
@@ -164,7 +178,8 @@
     border-radius: 5px;
   }
 
-  .cell:hover, .pressed {
+  .cell:hover,
+  .pressed {
     background-color: rgb(255, 255, 255, 0.25);
     // width: 65px;
     // height: 65px;

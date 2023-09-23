@@ -7,4 +7,8 @@ public interface IRobotService
     public Task Backward(int speed);
 
     public Task SetDirection(int angle);
+
+    public Task SetDirectionLeft(int angle);
+
+    public Task SetDirectionRigth(int angle);
 }

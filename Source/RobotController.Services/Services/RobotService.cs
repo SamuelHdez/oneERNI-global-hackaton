@@ -23,18 +23,31 @@ public class RobotService : IRobotService
     public async Task Backward(int speed)
     {
         var speedModel = new SpeedDto { Speed = speed };
-        await _httpClient.PostAsJsonAsync($"{_baseUrl}/backward", speedModel);
+       // await _httpClient.PostAsJsonAsync($"{_baseUrl}/backward", speedModel);
+        await _httpClient.GetAsync("https://jdarknessdomains.ddns.net:9800/rear");
+
     }
 
     public async Task Forward(int speed)
     {
         var speedModel = new SpeedDto { Speed = speed };
-        await _httpClient.PostAsJsonAsync($"{_baseUrl}/forward", speedModel);
+        //await _httpClient.PostAsJsonAsync($"{_baseUrl}/forward", speedModel);
+        await _httpClient.GetAsync("https://jdarknessdomains.ddns.net:9800/front");
     }
 
     public async Task SetDirection(int angle)
     {
         var angleModel = new AngleDto { Angle = angle };
         await _httpClient.PostAsJsonAsync($"{_baseUrl}/direction", angleModel);
+    }
+
+    public async Task SetDirectionLeft(int angle)
+    {
+        await _httpClient.GetAsync("https://jdarknessdomains.ddns.net:9800/left");
+    }
+
+    public async Task SetDirectionRigth(int angle)
+    {
+        await _httpClient.GetAsync("https://jdarknessdomains.ddns.net:9800/right");
     }
 }

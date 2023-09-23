@@ -47,14 +47,14 @@ namespace RobotController.Controllers
         [HttpPost("left")]
         public async Task<IActionResult> MoveLeft([FromBody] AngleDto angleDto)
         {
-            await _robotService.SetDirection(-angleDto.Angle);
+            await _robotService.SetDirectionLeft(-angleDto.Angle);
             return Ok();
         }
 
         [HttpPost("right")]
         public async Task<IActionResult> MoveRight([FromBody] AngleDto angleDto)
         {
-            await _robotService.SetDirection(angleDto.Angle);
+            await _robotService.SetDirectionRigth(angleDto.Angle);
             return Ok();
         }
     }
