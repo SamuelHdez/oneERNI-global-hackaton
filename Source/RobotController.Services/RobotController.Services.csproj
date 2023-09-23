@@ -10,8 +10,9 @@
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.1.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
+   <ItemGroup>
+    <ProjectReference Include="..\RobotController.Domain\RobotController.Domain.csproj" />
+    <ProjectReference Include="..\RobotController.Infrastructure\RobotController.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
