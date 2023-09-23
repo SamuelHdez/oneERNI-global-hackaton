@@ -43,12 +43,15 @@
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
+        overflow: hidden;
+        border-right: 2px solid rgb(255, 255, 255, 0.5);
 
         .cam-container {
           border: 2px solid #ffffff;
           width: 320px;
           height: 240px;
           flex: 1;
+          border-radius: 5px;
 
           img {
             animation: parpadear 2.5s infinite;
@@ -71,22 +74,100 @@
         }
 
       }
+    }
 
-      #home-map {
+    #home-map {
+      display: flex;
+      align-content: center;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      padding: 16px;
+      height: 250px;
+
+      .home-section-title {
+        font-size: 20px;
+      }
+
+      .map-container {
+        border: 2px solid #ffffff;
+        width: 100%;
+        height: 240px;
         flex: 1;
-        display: flex;
-        align-content: center;
-        justify-content: flex-start;
-        align-items: center;
-        flex-direction: column;
-
-        .map-container {
-          border: 2px solid #ffffff;
-          width: 100%;
-          height: 240px;
-          flex: 1;
-        }
+        border-radius: 5px;
       }
     }
+
+    #home-how-to {
+      margin-top: 16px;
+
+      .how-to-container {
+        display: flex;
+        padding: 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+
+        .how-to-info {
+          text-align: left;
+          padding: 16px;
+          background-color: rgb(255, 255, 255, 0.1);
+          border-radius: 5px;
+
+          li {
+            margin: 8px 0;
+          }
+        }
+
+        #vehicle-img {
+          height: 150px;
+          width: auto;
+        }
+
+
+      }
+
+
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    grid-template-rows: repeat(2, 60px);
+    gap: 10px;
+  }
+
+  .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    // background-color: #f7f7f7;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.15s ease-in-out;
+
+    &.invisible {
+      border: none;
+    }
+  }
+
+  #up,
+  #down,
+  #left,
+  #right {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .cell:hover, .pressed {
+    background-color: rgb(255, 255, 255, 0.25);
+    // width: 65px;
+    // height: 65px;
+    font-size: 20px;
   }
 }

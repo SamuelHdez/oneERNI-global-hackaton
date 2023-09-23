@@ -9,6 +9,7 @@ const PROXY_CONFIG = [
       "/weatherforecast",
       "/api/about",
       "/hub",
+      "/api/robotcommand",
    ],
     proxyTimeout: 10000,
     target: target,
