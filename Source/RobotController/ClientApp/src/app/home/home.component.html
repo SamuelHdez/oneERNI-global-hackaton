@@ -2,6 +2,23 @@
   <div class="section">
     <div id="status-text" [ngClass]="{'connected': this.connection.isConnected}">Status: {{this.getConnectionStatus()}}
     </div>
-    <img id="img-status-connection" src="../../assets/images/vehicle.png" class="img-fluid" alt="Responsive image">
+    <div id="home-content">
+      <div id="home-map">
+        <div class="home-section-title">Map</div>
+        <div class="map-container">
+          Aquí irá el mapa
+        </div>
+      </div>
+      <div id="home-cam">
+        <div class="home-section-title">Camera</div>
+        <div *ngIf="!this.connection.isConnected" class="cam-container">
+          <img id="img-status-connection" src="../../assets/images/no-signal.png" class="img-fluid"
+            alt="Responsive image">
+        </div>
+        <img class="cam-container" *ngIf="this.connection.isConnected"
+          src="http://jdarknessdomains.ddns.net:9800/video_feed" width="320" height="240">
+      </div>
+      <!-- <img  /> -->
+    </div>
   </div>
 </div>
