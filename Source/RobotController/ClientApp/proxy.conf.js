@@ -10,6 +10,7 @@ const PROXY_CONFIG = [
       "/api/about",
       "/hub",
       "/api/robotcommand",
+      "/api/robotcamera",
    ],
     proxyTimeout: 10000,
     target: target,

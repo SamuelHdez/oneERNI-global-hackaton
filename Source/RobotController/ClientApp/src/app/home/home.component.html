@@ -17,28 +17,61 @@
         <div>HOW TO MANAGE THE ROBOT</div>
         <div class="how-to-container">
           <!-- <img id="vehicle-img" src="../../assets/images/vehicle.png"> -->
-          <div class="grid">
-            <div class="cell invisible"></div>
-            <div class="cell" id="up" [ngClass]="{'pressed': this.forwardKeyPressed}"
-              (mousedown)="this.pressMoveForward()" (mouseup)="this.forwardKeyPressed = false">W</div>
-            <div class="cell invisible"></div>
+          <div id="controls">
+            ROBOT
+            <div class="grid">
+              <div class="cell invisible"></div>
+              <div class="cell" id="up" [ngClass]="{'pressed': this.forwardKeyPressed}"
+                (mousedown)="this.pressMoveForward()" (mouseup)="this.forwardKeyPressed = false">W</div>
+              <div class="cell invisible"></div>
 
-            <div class="cell" id="left" [ngClass]="{'pressed': this.leftKeyPressed}" (mousedown)="this.pressMoveLeft()"
-              (mouseup)="this.leftKeyPressed = false">A</div>
-            <div class="cell" id="down" [ngClass]="{'pressed': this.backwardKeyPressed}"
-              (mousedown)="this.pressMoveBackward()" (mouseup)="this.backwardKeyPressed = false">S</div>
-            <div class="cell" id="right" [ngClass]="{'pressed': this.rigthKeyPressed}"
-              (mousedown)="this.pressMoveRight()" (mouseup)="this.rigthKeyPressed = false">D</div>
+              <div class="cell" id="left" [ngClass]="{'pressed': this.leftKeyPressed}"
+                (mousedown)="this.pressMoveLeft()" (mouseup)="this.leftKeyPressed = false">A</div>
+              <div class="cell" id="down" [ngClass]="{'pressed': this.backwardKeyPressed}"
+                (mousedown)="this.pressMoveBackward()" (mouseup)="this.backwardKeyPressed = false">S</div>
+              <div class="cell" id="right" [ngClass]="{'pressed': this.rigthKeyPressed}"
+                (mousedown)="this.pressMoveRight()" (mouseup)="this.rigthKeyPressed = false">D</div>
+            </div>
+
+            CAMERA
+            <div class="grid">
+              <div class="cell invisible"></div>
+              <div class="cell" id="cam-up" [ngClass]="{'pressed': this.camUpKeyPressed}"
+                (mousedown)="this.pressCamMoveUp()" (mouseup)="this.camUpKeyPressed = false">↑</div>
+              <div class="cell invisible"></div>
+              <div class="cell" id="cam-left" [ngClass]="{'pressed': this.camLeftKeyPressed}"
+                (mousedown)="this.pressCamMoveLeft()" (mouseup)="this.camLeftKeyPressed = false">←</div>
+              <div class="cell" id="cam-down" [ngClass]="{'pressed': this.camDownKeyPressed}"
+                (mousedown)="this.pressCamMoveDown()" (mouseup)="this.camDownKeyPressed = false">↓</div>
+              <div class="cell" id="cam-right" [ngClass]="{'pressed': this.camRightKeyPressed}"
+                (mousedown)="this.pressCamMoveRight()" (mouseup)="this.camRightKeyPressed = false">→</div>
+            </div>
+            <div class="space-cell" id="cam-center" [ngClass]="{'pressed': this.camCenterKeyPressed}"
+              (mousedown)="this.pressCamCenter()" (mouseup)="this.camCenterKeyPressed = false">
+              SPACE | Center the camera
+            </div>
           </div>
           <div class="how-to-info">
-            You can control the robot by pressing the keys on your keyboard <br /> or by clicking on the keys on the
+            You can control the robot and camera by pressing the keys on your keyboard <br /> or by clicking on the keys
+            on the
             interface.
-            <ul>
-              <li>W: Move forward</li>
-              <li>S: Move backward</li>
-              <li>A: Move to the left</li>
-              <li>D: Move to the right</li>
-            </ul>
+            <div id="controls-information">
+              <ul>
+                ROBOT
+                <li>W: Move forward</li>
+                <li>S: Move backward</li>
+                <li>A: Move to the left</li>
+                <li>D: Move to the right</li>
+              </ul>
+              <ul>
+                CAMERA
+                <li>↑: Look up</li>
+                <li>↓: Look down</li>
+                <li>←: Look to the left</li>
+                <li>→: Look to the right</li>
+                <li>SPACE: Center the camera</li>
+              </ul>
+            </div>
           </div>
 
         </div>
@@ -48,12 +81,12 @@
       <!-- <img  /> -->
     </div>
 
-    <div id="home-map">
+    <!-- <div id="home-map">
       <div class="home-section-title">Map</div>
       <div class="map-container">
         Aquí irá el mapa
       </div>
-    </div>
+    </div> -->
 
   </div>
 </div>
