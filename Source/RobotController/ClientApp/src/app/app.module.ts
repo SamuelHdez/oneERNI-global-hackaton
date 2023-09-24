@@ -7,8 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { DocumentationComponent } from './documentation/documentation.component';
 import { AboutComponent } from './about/about.component';
 import { SignalrService } from './api/signalr.service';
 
@@ -17,8 +16,7 @@ import { SignalrService } from './api/signalr.service';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
+    DocumentationComponent,
     AboutComponent
   ],
   imports: [
@@ -27,9 +25,8 @@ import { SignalrService } from './api/signalr.service';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'about', component: AboutComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'counter', component: DocumentationComponent },
+      { path: 'about', component: AboutComponent }
     ])
   ],
   providers: [

@@ -28,4 +28,17 @@ export class RobotCommandServiceApi {
     moveRight(): Observable<void> {
         return this.http.post<void>(`${this.baseUrl}right`, { angle: 100 });
     }
+
+    startRecording(): Observable<void> {
+        return this.http.post<void>(`${this.baseUrl}start-recording`, {});
+    }
+
+    stopRecording(): Observable<void> {
+        return this.http.post<void>(`${this.baseUrl}end-recording`, {});
+    }
+
+    playRecording(): Observable<void> {
+        return this.http.post<void>(`${this.baseUrl}play-last-recorded`, {});
+    }
+
 }

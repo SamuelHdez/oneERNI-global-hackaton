@@ -102,6 +102,7 @@ export class HomeComponent {
   }
 
   pressCamMoveUp() {
+    if (!this.connection.isConnected) return;
     this.camUpKeyPressed = true;
     this.robotCameraService.moveUp().pipe(debounceTime(1000)).subscribe(() => {
       console.log('camMoveUp()');
@@ -109,6 +110,7 @@ export class HomeComponent {
   }
 
   pressCamMoveDown() {
+    if (!this.connection.isConnected) return;
     this.camDownKeyPressed = true;
     this.robotCameraService.moveDown().pipe(debounceTime(1000)).subscribe(() => {
       console.log('camMoveDown()');
@@ -116,6 +118,7 @@ export class HomeComponent {
   }
 
   pressCamMoveLeft() {
+    if (!this.connection.isConnected) return;
     this.camLeftKeyPressed = true;
     this.robotCameraService.moveLeft().pipe(debounceTime(1000)).subscribe(() => {
       console.log('camMoveLeft()');
@@ -123,6 +126,7 @@ export class HomeComponent {
   }
 
   pressCamMoveRight() {
+    if (!this.connection.isConnected) return;
     this.camRightKeyPressed = true;
     this.robotCameraService.moveRight().pipe(debounceTime(1000)).subscribe(() => {
       console.log('camMoveRight()');
@@ -130,6 +134,7 @@ export class HomeComponent {
   }
 
   pressCamCenter() {
+    if (!this.connection.isConnected) return;
     this.camCenterKeyPressed = true;
     this.robotCameraService.centerCamera().pipe(debounceTime(1000)).subscribe(() => {
       console.log('camCenter()');
@@ -137,6 +142,7 @@ export class HomeComponent {
   }
 
   pressMoveForward() {
+    if (!this.connection.isConnected) return;
     this.forwardKeyPressed = true;
     this.robotCommandService.moveForward().pipe(debounceTime(1000)).subscribe(() => {
       console.log('moveForward()');
@@ -144,6 +150,7 @@ export class HomeComponent {
   }
 
   pressMoveBackward() {
+    if (!this.connection.isConnected) return;
     this.backwardKeyPressed = true;
     this.robotCommandService.moveBackward().pipe(debounceTime(1000)).subscribe(() => {
       console.log('moveBackward()');
@@ -151,6 +158,7 @@ export class HomeComponent {
   }
 
   pressMoveLeft() {
+    if (!this.connection.isConnected) return;
     this.leftKeyPressed = true;
     this.robotCommandService.moveLeft().pipe(debounceTime(1000)).subscribe(() => {
       console.log('moveLeft()');
@@ -158,9 +166,31 @@ export class HomeComponent {
   }
 
   pressMoveRight() {
+    if (!this.connection.isConnected) return;
     this.rigthKeyPressed = true;
     this.robotCommandService.moveRight().pipe(debounceTime(1000)).subscribe(() => {
       console.log('moveRight()');
+    });
+  }
+
+  startRecording() {
+    if (!this.connection.isConnected) return;
+    this.robotCommandService.startRecording().subscribe(() => {
+      console.log('startRecording()');
+    });
+  }
+
+  stopRecording() {
+    if (!this.connection.isConnected) return;
+    this.robotCommandService.stopRecording().subscribe(() => {
+      console.log('stopRecording()');
+    });
+  }
+
+  playRecording() {
+    if (!this.connection.isConnected) return;
+    this.robotCommandService.playRecording().subscribe(() => {
+      console.log('playRecording()');
     });
   }
 }

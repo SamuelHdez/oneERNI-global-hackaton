@@ -39,6 +39,8 @@
 
     #home-content {
       display: flex;
+      justify-content: center;
+      gap: 24px;
       padding: 16px;
 
       .home-section-title {
@@ -47,8 +49,34 @@
         margin-bottom: 16px;
       }
 
-      #home-cam {
-        flex: 1;
+      .controls {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        .controls-title {
+          font-size: 20px;
+          color: #ffffff;
+        }
+
+        .space-cell {
+          border: 2px solid #ccc;
+          border-radius: 5px;
+          padding: 12px 8px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: rgb(255, 255, 255, 0.25);
+          }
+
+          // &.invisible {
+          //   visibility: hidden;
+          // }
+        }
+      }
+
+      #camera-content {
         display: flex;
         align-content: center;
         justify-content: flex-start;
@@ -56,14 +84,45 @@
         flex-direction: column;
         overflow: hidden;
         // border-right: 2px solid rgb(255, 255, 255, 0.5);
-        min-width: 320px;
-        min-height: 240px;
-        max-height: 300px;
+        // min-width: 320px;
+        // min-height: 240px;
+        // max-height: 300px;
+
+        #record-controls {
+          margin-top: 16px;
+
+          #record-controls-title {
+            font-size: 20px;
+            color: #ffffff;
+          }
+
+          #record-controls-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            .record-button {
+              cursor: pointer;
+              padding: 8px;
+              border: 1px solid #ffffff;
+              border-radius: 5px;
+              margin: 8px;
+              max-width: 150px;
+              min-width: 150px;
+
+              &:hover {
+                background-color: rgb(255, 255, 255, 0.25);
+              }
+            }
+          }
+        }
+
 
         .cam-container {
           border: 2px solid #ffffff;
-          width: 320px;
-          height: 240px;
+          width: 480px;
+          height: 360px;
 
           flex: 1;
           border-radius: 5px;
@@ -89,6 +148,14 @@
         }
 
       }
+
+      #left-container {
+        flex: 1;
+
+
+      }
+
+
     }
 
     #home-map {
@@ -117,23 +184,7 @@
       margin-top: 16px;
       border-left: 2px solid rgb(255, 255, 255, 0.5);
 
-      #controls {
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
 
-        .space-cell {
-          border: 2px solid #ccc;
-          border-radius: 5px;
-          padding: 12px 8px;
-          cursor: pointer;
-
-          &:hover {
-            background-color: rgb(255, 255, 255, 0.25);
-          }
-        }
-      }
 
 
       .how-to-container {
@@ -178,7 +229,7 @@
     grid-template-columns: repeat(3, 60px);
     grid-template-rows: repeat(2, 60px);
     gap: 10px;
-    margin-bottom: 16px;
+    margin: 16px 0;
   }
 
   .cell {
@@ -220,6 +271,16 @@
 
     &#cam-center {
       font-size: 16px;
+    }
+  }
+
+  .disabled {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+
+    &:hover {
+      font-size: 16px;
+      background-color: transparent !important;
     }
   }
 }

@@ -1,22 +1,123 @@
 <div id="home-component">
   <img id="erni-global-img" src="../../assets/images/erni-global.png" />
   <div class="section">
-    <div id="status-text" [ngClass]="{'connected': this.connection.isConnected}">Status: {{this.getConnectionStatus()}}
+    <div id="status-text" [ngClass]="{'connected': this.connection.isConnected}">
+      Status: {{this.getConnectionStatus()}}
     </div>
     <div id="home-content">
-      <div id="home-cam">
-        <div class="home-section-title">Camera</div>
+      <div class="controls">
+        <div class="controls-title">Robot Controls</div>
+        <div class="grid">
+          <div class="cell invisible"></div>
+          <div class="cell" id="up"
+            [ngClass]="{'pressed': this.forwardKeyPressed, 'disabled': !this.connection.isConnected}"
+            (mousedown)="this.pressMoveForward()" (mouseup)="this.forwardKeyPressed = false">W</div>
+          <div class="cell invisible"></div>
+
+          <div class="cell" id="left"
+            [ngClass]="{'pressed': this.leftKeyPressed, 'disabled': !this.connection.isConnected}"
+            (mousedown)="this.pressMoveLeft()" (mouseup)="this.leftKeyPressed = false">A</div>
+          <div class="cell" id="down"
+            [ngClass]="{'pressed': this.backwardKeyPressed, 'disabled': !this.connection.isConnected}"
+            (mousedown)="this.pressMoveBackward()" (mouseup)="this.backwardKeyPressed = false">S</div>
+          <div class="cell" id="right"
+            [ngClass]="{'pressed': this.rigthKeyPressed, 'disabled': !this.connection.isConnected}"
+            (mousedown)="this.pressMoveRight()" (mouseup)="this.rigthKeyPressed = false">D</div>
+        </div>
+        <div class="space-cell invisible">
+          Invisible
+        </div>
+      </div>
+      <div id="camera-content">
+        <div class="home-section-title">ROBOT LIVE CAM</div>
         <div *ngIf="!this.connection.isConnected" class="cam-container">
           <img id="img-status-connection" src="../../assets/images/no-signal.png" class="img-fluid"
             alt="Responsive image">
         </div>
         <img class="cam-container" *ngIf="this.connection.isConnected"
           src="https://jdarknessdomains.ddns.net:9800/video_feed" width="320" height="240">
+        <div id="record-controls">
+          <div id="record-controls-title">
+            Recording controls
+          </div>
+          <div id="record-controls-container">
+            <div class="record-button" [ngClass]="{'disabled': !this.connection.isConnected}"
+              (click)="this.startRecording()">
+              ⏺️ Record
+            </div>
+            <div class="record-button" [ngClass]="{'disabled': !this.connection.isConnected}"
+              (click)="this.stopRecording()">
+              ⏸️ Stop
+            </div>
+            <div class="record-button" [ngClass]="{'disabled': !this.connection.isConnected}"
+              (click)="this.playRecording()">
+              ▶️ Play
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="controls-title">Camera Controls</div>
+        <div class="grid">
+          <div class="cell invisible"></div>
+          <div class="cell" id="cam-up"
+            [ngClass]="{'pressed': this.camUpKeyPressed, 'disabled': !this.connection.isConnected}"
+            (mousedown)="this.pressCamMoveUp()" (mouseup)="this.camUpKeyPressed = false">↑</div>
+          <div class="cell invisible"></div>
+          <div class="cell" id="cam-left"
+            [ngClass]="{'pressed': this.camLeftKeyPressed, 'disabled': !this.connection.isConnected}"
+            (mousedown)="this.pressCamMoveLeft()" (mouseup)="this.camLeftKeyPressed = false">←</div>
+          <div class="cell" id="cam-down"
+            [ngClass]="{'pressed': this.camDownKeyPressed, 'disabled': !this.connection.isConnected}"
+            (mousedown)="this.pressCamMoveDown()" (mouseup)="this.camDownKeyPressed = false">↓</div>
+          <div class="cell" id="cam-right"
+            [ngClass]="{'pressed': this.camRightKeyPressed, 'disabled': !this.connection.isConnected}"
+            (mousedown)="this.pressCamMoveRight()" (mouseup)="this.camRightKeyPressed = false">→</div>
+        </div>
+        <div class="space-cell" id="cam-center"
+          [ngClass]="{'pressed': this.camCenterKeyPressed, 'disabled': !this.connection.isConnected}"
+          (mousedown)="this.pressCamCenter()" (mouseup)="this.camCenterKeyPressed = false">
+          SPACE | Center the camera
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div id="home-component">
+  <img id="erni-global-img" src="../../assets/images/erni-global.png" />
+  <div class="section">
+    <div id="status-text" [ngClass]="{'connected': this.connection.isConnected}">Status: {{this.getConnectionStatus()}}
+    </div>
+    <div id="home-content">
+      <div id="left-container">
+        <div id="home-cam">
+          <div class="home-section-title">Camera</div>
+          <div *ngIf="!this.connection.isConnected" class="cam-container">
+            <img id="img-status-connection" src="../../assets/images/no-signal.png" class="img-fluid"
+              alt="Responsive image">
+          </div>
+          <img class="cam-container" *ngIf="this.connection.isConnected"
+            src="https://jdarknessdomains.ddns.net:9800/video_feed" width="320" height="240">
+          <div>
+          </div>
+        </div>
+        <div id="record-controls-container">
+          <div class="record-button" (click)="this.startRecording()">
+            Start recording
+          </div>
+          <div class="record-button" (click)="this.stopRecording()">
+            Stop recording
+          </div>
+          <div class="record-button" (click)="this.playRecording()">
+            Play
+          </div>
+        </div>
       </div>
       <div id="home-how-to">
         <div>HOW TO MANAGE THE ROBOT</div>
         <div class="how-to-container">
-          <!-- <img id="vehicle-img" src="../../assets/images/vehicle.png"> -->
           <div id="controls">
             ROBOT
             <div class="grid">
@@ -78,15 +179,8 @@
       </div>
 
 
-      <!-- <img  /> -->
     </div>
 
-    <!-- <div id="home-map">
-      <div class="home-section-title">Map</div>
-      <div class="map-container">
-        Aquí irá el mapa
-      </div>
-    </div> -->
 
   </div>
-</div>
+</div> -->

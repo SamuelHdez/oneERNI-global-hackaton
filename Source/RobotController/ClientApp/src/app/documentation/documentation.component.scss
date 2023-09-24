@@ -1,0 +1,49 @@
+#documentation-page {
+    .documentation-section {
+        margin: 16px 0;
+        background-color: rgb(0, 0, 0, 0.5);
+        border-radius: 5px;
+        overflow: hidden;
+
+        .documentation-section-title {
+            background-color: #0c0c0c;
+            padding: 8px;
+        }
+
+        .documentation-section-content {
+            text-align: left;
+            padding: 16px;
+            border-radius: 5px;
+
+            #github-img {
+                width: 300px;
+                margin: 24px 0;
+            }
+
+            &.center {
+                text-align: center;
+            }
+
+            #controls-information {
+                margin-top: 12px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+
+                li {
+                    list-style-type: none;
+                    margin: 8px 0;
+                }
+
+                .controls-information-title {
+                    font-size: 16px;
+                    font-weight: 700;
+                    text-align: center;
+                    background-color: #0c0c0c;
+                    padding: 8px;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
