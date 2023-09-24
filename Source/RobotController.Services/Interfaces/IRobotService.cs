@@ -1,18 +1,22 @@
-﻿namespace RobotController.Services;
+﻿namespace RobotController.Services.Interfaces;
 
 public interface IRobotService
 {
-    public Task MoveForward(int speed);
+    Task MoveForward(int speed);
 
-    public Task MoveBackward(int speed);
+    Task MoveBackward(int speed);
 
-    public Task SetDirection(int angle);
+    Task MoveLeft();
 
-    public Task MoveLeft();
+    Task MoveRight();
 
-    public Task MoveRight();
-
-    public Task KeepAlive();
+    Task KeepAlive();
 
     Task Talk(string? text);
+
+    Task StartRecording();
+
+    Task EndRecording();
+
+    Task PlayLastRecordedRace();
 }

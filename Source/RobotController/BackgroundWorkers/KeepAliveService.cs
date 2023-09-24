@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using RobotController.Domain.Dtos;
 using RobotController.Domain.Models;
-using RobotController.Services;
 using RobotController.Services.Hubs;
+using RobotController.Services.Interfaces;
 
 namespace RobotController.BackgroundWorkers
 {
@@ -26,29 +26,27 @@ namespace RobotController.BackgroundWorkers
                 try
                 {
                     await _robotService.KeepAlive();
-                    var connectionEvent = new ConnectionEvent
-                    {
-                        IsConnected = true,
-                        DateTime = DateTime.UtcNow,
-                    };
-                    await _hub.Clients.All.SendAsync(nameof(ConnectionEvent), connectionEvent);
+                    await SendConnectionEvent(true);
 
                 }
-                catch (Exception ex) 
+                catch (Exception ex)
                 {
                     _logger.LogError(ex, "Error when trying to send the keep alive.");
-
-                    var connectionEvent = new ConnectionEvent
-                    {
-                        IsConnected = false,
-                        DateTime = DateTime.UtcNow,
-                    };
-
-                    await _hub.Clients.All.SendAsync(nameof(ConnectionEvent), connectionEvent);
+                    await SendConnectionEvent(false);
                 }
 
                 await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
             }
+        }
+
+        private async Task SendConnectionEvent(bool isConnected)
+        {
+            var connectionEvent = new ConnectionEventDto
+            {
+                IsConnected = isConnected
+            };
+
+            await _hub.Clients.All.SendAsync(nameof(ConnectionEvent), connectionEvent);
         }
     }
 }

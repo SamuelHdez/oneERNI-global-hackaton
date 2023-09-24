@@ -3,6 +3,7 @@ using RobotController.BackgroundWorkers;
 using RobotController.Infrastructure.Configuration;
 using RobotController.Services;
 using RobotController.Services.Hubs;
+using RobotController.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,8 +29,10 @@ builder.Services.Configure<RobotApiOptions>(builder.Configuration.GetSection("Ro
 // Add services to the container.
 builder.Services.AddSignalR();
 builder.Services.AddSingleton<IRobotService, RobotService>();
+builder.Services.AddSingleton<IRobotCameraService, RobotCameraService>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient<RobotService>();
+builder.Services.AddHttpClient<RobotCameraService>();
 builder.Services.AddHostedService<KeepAliveService>();
 
 var app = builder.Build();

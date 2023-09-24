@@ -24,4 +24,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RobotController.Services\RobotController.Services.csproj" />
+  </ItemGroup>
+
 </Project>

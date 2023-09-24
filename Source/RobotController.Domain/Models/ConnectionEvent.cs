@@ -13,7 +13,7 @@ namespace RobotController.Domain.Models
         public ConnectionEvent(ConnectionEventDto connectionEventDto)
         {
             this.IsConnected = connectionEventDto.IsConnected;
-            this.DateTime = DateTime.Now;
+            this.DateTime = DateTime.UtcNow;
         }
     }
 }
