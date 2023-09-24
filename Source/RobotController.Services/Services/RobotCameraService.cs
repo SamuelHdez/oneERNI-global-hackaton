@@ -42,4 +42,10 @@ public class RobotCameraService : IRobotCameraService
         using var response = await _httpClient.PostAsync($"{_baseUrl}{RobotApiEndpoints.CameraRight}", null);
         response.EnsureSuccessStatusCode();
     }
+
+    public async Task CameraCenter()
+    {
+        using var response = await _httpClient.PostAsync($"{_baseUrl}{RobotApiEndpoints.CameraCenter}", null);
+        response.EnsureSuccessStatusCode();
+    }
 }

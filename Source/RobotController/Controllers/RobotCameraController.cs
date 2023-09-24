@@ -43,5 +43,12 @@ namespace RobotController.Controllers
             await _robotCameraService.CameraRight();
             return Ok();
         }
+
+        [HttpPost("center")]
+        public async Task<IActionResult> CameraCenter()
+        {
+            await _robotCameraService.CameraCenter();
+            return Ok();
+        }
     }
 }

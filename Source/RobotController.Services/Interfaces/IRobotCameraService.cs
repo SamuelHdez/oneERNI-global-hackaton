@@ -6,5 +6,6 @@
         Task CameraLeft();
         Task CameraRight();
         Task CameraUp();
+        Task CameraCenter();
     }
 }
