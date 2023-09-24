@@ -7,8 +7,6 @@
 
 body {
   font-family: 'Exo', sans-serif;
-  // background-color: rgb(242, 242, 242, 1);
-  // background-color: #8f94fb;
   height: 100vh;
 
   .container {
@@ -29,7 +27,6 @@ body {
   height: 10vh;
   background-image: url('../assets/images/footer.png');
   background-repeat: repeat round;
-  // border-top: rgb(28, 28, 30, 0.5) 2px solid;
   z-index: 9999;
   font-style: italic;
   font-weight: 500;
@@ -37,34 +34,22 @@ body {
 
 
 .context {
-  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  // background-color: rgb(0, 0, 0, 0.75);
   text-align: center;
-  margin: auto;
   height: 80vh;
   border-radius: 10px;
   color: #ffffff;
   overflow-x: hidden;
   overflow-y: scroll;
   z-index: 999;
+  width: 98%;
 
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.context::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.context {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
+  @media only screen and (max-width: 580px) {
+    margin-top: 24px;
+  }
 }
 
 .context h1 {
@@ -75,18 +60,9 @@ body {
 
 
 .area {
-  // background: rgb(2, 0, 36);
   background: #16222A;
-  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #3A6073, #16222A);
-  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #3A6073, #16222A);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-
-
-  // background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
   width: 100%;
   height: 100vh;
 }
@@ -94,7 +70,6 @@ body {
 .circles {
   position: absolute;
   top: 0;
-  // bottom: 60;
   left: 0;
   width: 100%;
   height: 100%;
@@ -190,10 +165,7 @@ body {
   animation-duration: 11s;
 }
 
-
-
 @keyframes animate {
-
   0% {
     transform: translateY(0) rotate(0deg);
     opacity: 1;
@@ -205,5 +177,4 @@ body {
     opacity: 0;
     border-radius: 50%;
   }
-
 }

@@ -18,3 +18,23 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(255,255,255,0.5);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(255,255,255,1);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

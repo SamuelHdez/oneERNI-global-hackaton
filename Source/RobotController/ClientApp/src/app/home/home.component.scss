@@ -1,11 +1,15 @@
 #home-component {
-  margin-top: 20px;
+  margin: 20px;
 
   #erni-global-img {
     width: 40vh;
     margin-bottom: 16px;
     opacity: 0.5;
     transition: all 0.25s ease-in-out;
+
+    @media only screen and (max-width: 580px) {
+      margin-top: 24px;
+    }
 
     &:hover {
       opacity: 1;
@@ -47,7 +51,7 @@
       gap: 24px;
       padding: 16px;
 
-      @media only screen and (max-width: 800px) {
+      @media only screen and (max-width: 700px) {
         flex-wrap: wrap;
       }
 
