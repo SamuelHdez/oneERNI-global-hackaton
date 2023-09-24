@@ -39,9 +39,33 @@ This repository contains the code for the oneERNI global hackathon project.
 
 5. Run the project
 
-## Usage
+## Documentation
 
-Add instructions on how to use the project, any scripts or commands users need to run, etc.
+### Architecture
+![alt text](https://github.com/SamuelHdez/oneERNI-global-hackaton-divertiteam/blob/main/Diagrams/Arch.png?raw=true)
+
+### How to manage the robot
+You can control the robot and camera by pressing the keys on your keyboard or by clicking on the keys on the interface.
+
+ROBOT
+W: Move forward
+S: Move backward
+A: Move to the left
+D: Move to the right
+
+CAMERA
+↑: Look up
+↓: Look down
+←: Look to the left
+→: Look to the right
+SPACE: Center the camera
+
+### Recording controls
+You can save manually made routes and then send the order to the robot to repeat it automatically. To do this, you can use the buttons under the camera.
+
+- ⏺️ Record: Recording begins. Once the recording is running you can move the robot. The system will save all movements from that point on.
+- ⏸️ Stop: Stop recording. From this point on, the movements made by the robot will not be stored in the system.
+- ▶️ Play: Plays back the last recording made of the robot's movements. The robot will move autonomously from the point where it is, emulating the movements stored in the system.
 
 ## Contributing
 
@@ -62,5 +86,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Samuel Hdez - [@SamuelHdez](https://github.com/SamuelHdez)
 Carmen Avram - [@carmenavram](https://github.com/carmenavram)
 Andrés Vázquez - [@AndresVazqz](https://github.com/AndresVazqz)
+Ferran Balaguer
+David Soto
+
 
 Project Link: [https://github.com/SamuelHdez/oneERNI-global-hackaton](https://github.com/SamuelHdez/oneERNI-global-hackaton)
