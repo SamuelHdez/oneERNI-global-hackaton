@@ -2,6 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { SignalrService } from '../api/signalr.service';
 import { ConnectionEvent } from '../models/ConnectionEvent.model';
 import { RobotCommandServiceApi } from '../api/robotCommand.service';
+import { debounceTime } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -59,32 +60,30 @@ export class HomeComponent {
   }
 
   pressMoveForward() {
-    console.log('pressMoveForward()');
     this.forwardKeyPressed = true;
-    this.robotCommandService.moveForward().subscribe(() => {
+    this.robotCommandService.moveForward().pipe(debounceTime(1000)).subscribe(() => {
       console.log('moveForward()');
     });
   }
 
   pressMoveBackward() {
     this.backwardKeyPressed = true;
-    this.robotCommandService.moveBackward().subscribe(() => {
+    this.robotCommandService.moveBackward().pipe(debounceTime(1000)).subscribe(() => {
       console.log('moveBackward()');
     });
   }
 
   pressMoveLeft() {
     this.leftKeyPressed = true;
-    this.robotCommandService.moveLeft().subscribe(() => {
+    this.robotCommandService.moveLeft().pipe(debounceTime(1000)).subscribe(() => {
       console.log('moveLeft()');
     });
   }
 
   pressMoveRight() {
     this.rigthKeyPressed = true;
-    this.robotCommandService.moveRight().subscribe(() => {
+    this.robotCommandService.moveRight().pipe(debounceTime(1000)).subscribe(() => {
       console.log('moveRight()');
     });
   }
-
 }

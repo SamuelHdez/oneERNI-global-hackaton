@@ -8,7 +8,7 @@ namespace RobotController.Services;
 
 public class RobotService : IRobotService
 {
-    private const int ConnectionTimeoutInSeconds = 1;
+    private const int ConnectionTimeoutInSeconds = 5;
     private readonly RobotApiOptions _robotApiOptions;
     private readonly HttpClient _httpClient;
     private readonly string _baseUrl;
