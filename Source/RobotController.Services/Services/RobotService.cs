@@ -2,6 +2,7 @@
 using RobotController.Domain;
 using RobotController.Infrastructure.Configuration;
 using System.Net.Http.Json;
+using System.Text;
 
 namespace RobotController.Services;
 
@@ -57,6 +58,18 @@ public class RobotService : IRobotService
     public async Task KeepAlive()
     {
         using var response = await _httpClient.GetAsync($"{_baseUrl}/keepalive");
+        response.EnsureSuccessStatusCode();
+    }
+
+    public async Task Talk(string? text)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            return;
+        }
+
+        var content = new StringContent(text, Encoding.UTF8, "text/plain");
+        using var response = await _httpClient.PostAsync($"{_baseUrl}/talk", content);
         response.EnsureSuccessStatusCode();
     }
 }

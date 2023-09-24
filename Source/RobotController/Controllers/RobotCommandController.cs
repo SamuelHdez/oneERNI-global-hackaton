@@ -57,5 +57,12 @@ namespace RobotController.Controllers
             await _robotService.MoveRight();
             return Ok();
         }
+
+        [HttpPost("talk")]
+        public async Task<IActionResult> Talk([FromBody] TalkDto talkDto)
+        {
+            await _robotService.Talk(talkDto.Text);
+            return Ok();
+        }
     }
 }

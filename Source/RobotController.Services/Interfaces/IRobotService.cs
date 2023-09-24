@@ -13,4 +13,6 @@ public interface IRobotService
     public Task MoveRight();
 
     public Task KeepAlive();
+
+    Task Talk(string? text);
 }
