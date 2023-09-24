@@ -55,15 +55,16 @@
         align-items: center;
         flex-direction: column;
         overflow: hidden;
-        border-right: 2px solid rgb(255, 255, 255, 0.5);
+        // border-right: 2px solid rgb(255, 255, 255, 0.5);
         min-width: 320px;
         min-height: 240px;
         max-height: 300px;
+
         .cam-container {
           border: 2px solid #ffffff;
           width: 320px;
           height: 240px;
-          
+
           flex: 1;
           border-radius: 5px;
 
@@ -114,6 +115,26 @@
 
     #home-how-to {
       margin-top: 16px;
+      border-left: 2px solid rgb(255, 255, 255, 0.5);
+
+      #controls {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        .space-cell {
+          border: 2px solid #ccc;
+          border-radius: 5px;
+          padding: 12px 8px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: rgb(255, 255, 255, 0.25);
+          }
+        }
+      }
+
 
       .how-to-container {
         display: flex;
@@ -127,6 +148,13 @@
           padding: 16px;
           background-color: rgb(255, 255, 255, 0.1);
           border-radius: 5px;
+
+          #controls-information {
+            margin-top: 8px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+          }
 
           li {
             margin: 8px 0;
@@ -150,6 +178,7 @@
     grid-template-columns: repeat(3, 60px);
     grid-template-rows: repeat(2, 60px);
     gap: 10px;
+    margin-bottom: 16px;
   }
 
   .cell {
@@ -173,7 +202,11 @@
   #up,
   #down,
   #left,
-  #right {
+  #right,
+  #cam-up,
+  #cam-down,
+  #cam-left,
+  #cam-right {
     border: 2px solid #ccc;
     border-radius: 5px;
   }
@@ -184,5 +217,9 @@
     // width: 65px;
     // height: 65px;
     font-size: 20px;
+
+    &#cam-center {
+      font-size: 16px;
+    }
   }
 }
