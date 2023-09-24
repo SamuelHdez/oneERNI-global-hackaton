@@ -11,4 +11,6 @@ public interface IRobotService
     public Task MoveLeft();
 
     public Task MoveRight();
+
+    public Task KeepAlive();
 }

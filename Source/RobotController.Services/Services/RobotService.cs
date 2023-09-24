@@ -51,4 +51,11 @@ public class RobotService : IRobotService
         using var response = await _httpClient.PostAsync($"{_baseUrl}/right", null);
         response.EnsureSuccessStatusCode();
     }
+
+    public async Task KeepAlive()
+    {
+        _httpClient.Timeout = TimeSpan.FromSeconds(1);
+        using var response = await _httpClient.GetAsync($"{_baseUrl}/keepalive");
+        response.EnsureSuccessStatusCode();
+    }
 }
