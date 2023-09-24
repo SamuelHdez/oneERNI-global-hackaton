@@ -16,10 +16,8 @@ builder.Services.AddCors(options =>
          .AllowAnyHeader()
          .AllowAnyMethod()
          .AllowCredentials()
-         .WithOrigins("https://localhost:7018", "https://localhost:44474");
-        //builder.AllowAnyOrigin()
-        //         .AllowAnyMethod()
-        //         .AllowAnyHeader();
+         .WithOrigins("https://localhost:7018", "https://localhost:44474", "https://divertiteam-hackaton.azurewebsites.net")
+         .SetIsOriginAllowed((host) => true);
     });
 });
 

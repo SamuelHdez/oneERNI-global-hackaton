@@ -22,6 +22,10 @@ html {
 .navbar {
   z-index: 999;
 
+  @media only screen and (max-width: 600px) {
+    background-color: #16222A;
+  }
+
   #navbar-logo {
     width: 40px;
     height: 40px;

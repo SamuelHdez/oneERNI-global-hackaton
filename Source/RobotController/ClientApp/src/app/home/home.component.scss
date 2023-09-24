@@ -19,6 +19,10 @@
     width: 100%;
     overflow: hidden;
 
+    @media only screen and (max-width: 580px) {
+      width: 95%;
+    }
+
     #img-status-connection {
       width: 80vh;
       overflow: hidden;
@@ -42,6 +46,10 @@
       justify-content: center;
       gap: 24px;
       padding: 16px;
+
+      @media only screen and (max-width: 800px) {
+        flex-wrap: wrap;
+      }
 
       .home-section-title {
         font-size: 20px;
@@ -70,9 +78,11 @@
             background-color: rgb(255, 255, 255, 0.25);
           }
 
-          // &.invisible {
-          //   visibility: hidden;
-          // }
+          &.invisible {
+            @media only screen and (max-width: 800px) {
+              display: none;
+            }
+          }
         }
       }
 
@@ -83,10 +93,7 @@
         align-items: center;
         flex-direction: column;
         overflow: hidden;
-        // border-right: 2px solid rgb(255, 255, 255, 0.5);
-        // min-width: 320px;
-        // min-height: 240px;
-        // max-height: 300px;
+
 
         #record-controls {
           margin-top: 16px;
@@ -102,6 +109,10 @@
             justify-content: center;
             align-items: center;
 
+            @media only screen and (max-width: 1000px) {
+              flex-wrap: wrap;
+            }
+
             .record-button {
               cursor: pointer;
               padding: 8px;
@@ -111,6 +122,16 @@
               max-width: 150px;
               min-width: 150px;
 
+              @media only screen and (max-width: 1200px) {
+                max-width: 100px;
+                min-width: 100px;
+              }
+
+              @media only screen and (max-width: 1000px) {
+                max-width: 100px;
+                min-width: 100px;
+              }
+
               &:hover {
                 background-color: rgb(255, 255, 255, 0.25);
               }
@@ -118,18 +139,31 @@
           }
         }
 
-
         .cam-container {
           border: 2px solid #ffffff;
           width: 480px;
           height: 360px;
-
           flex: 1;
           border-radius: 5px;
 
           img {
             animation: parpadear 2.5s infinite;
+          }
 
+          @media only screen and (max-width: 1200px) {
+            width: 360px;
+            height: 240px;
+          }
+
+          @media only screen and (max-width: 1000px) {
+            width: 220px;
+            height: 180px;
+          }
+
+          @media only screen and (max-width: 800px) {
+            flex: 1;
+            width: 100%;
+            height: auto;
           }
         }
 
@@ -148,79 +182,6 @@
         }
 
       }
-
-      #left-container {
-        flex: 1;
-
-
-      }
-
-
-    }
-
-    #home-map {
-      display: flex;
-      align-content: center;
-      justify-content: flex-start;
-      align-items: center;
-      flex-direction: column;
-      padding: 16px;
-      height: 250px;
-
-      .home-section-title {
-        font-size: 20px;
-      }
-
-      .map-container {
-        border: 2px solid #ffffff;
-        width: 100%;
-        height: 240px;
-        flex: 1;
-        border-radius: 5px;
-      }
-    }
-
-    #home-how-to {
-      margin-top: 16px;
-      border-left: 2px solid rgb(255, 255, 255, 0.5);
-
-
-
-
-      .how-to-container {
-        display: flex;
-        padding: 16px;
-        justify-content: center;
-        align-items: center;
-        gap: 16px;
-
-        .how-to-info {
-          text-align: left;
-          padding: 16px;
-          background-color: rgb(255, 255, 255, 0.1);
-          border-radius: 5px;
-
-          #controls-information {
-            margin-top: 8px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-          }
-
-          li {
-            margin: 8px 0;
-          }
-        }
-
-        #vehicle-img {
-          height: 150px;
-          width: auto;
-        }
-
-
-      }
-
-
     }
   }
 
@@ -230,6 +191,16 @@
     grid-template-rows: repeat(2, 60px);
     gap: 10px;
     margin: 16px 0;
+
+    @media only screen and (max-width: 800px) {
+      margin: 8px 0;
+    }
+
+    @media only screen and (max-width: 900px) {
+      gap: 2px;
+      margin: 6px 0;
+    }
+
   }
 
   .cell {
@@ -244,6 +215,12 @@
     cursor: pointer;
     background-color: transparent;
     transition: all 0.15s ease-in-out;
+
+    @media only screen and (max-width: 900px) {
+      width: 50px;
+      height: 50px;
+      font-size: 14px;
+    }
 
     &.invisible {
       border: none;
@@ -283,4 +260,6 @@
       background-color: transparent !important;
     }
   }
+
+
 }

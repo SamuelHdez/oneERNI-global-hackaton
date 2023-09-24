@@ -14,9 +14,24 @@
       display: flex;
       width: auto;
 
+      @media only screen and (max-width: 800px) {
+        flex-wrap: wrap;
+      }
+
       .team-avatar {
         width: 250px;
         object-fit: cover;
+
+        @media only screen and (max-width: 1000px) {
+          width: 220px;
+          padding: 8px;
+        }
+
+        @media only screen and (max-width: 800px) {
+          width: 100%;
+          margin: 0 auto;
+        }
+
       }
 
       .team-description {
@@ -41,7 +56,6 @@
           white-space: break-spaces;
         }
       }
-
     }
   }
 }
