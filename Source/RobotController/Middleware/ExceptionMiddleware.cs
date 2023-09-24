@@ -20,7 +20,9 @@ public class ExceptionMiddleware
         catch (Exception ex)
         {
             _logger.LogError(ex, "An unhandled exception has occurred while executing the request.");
-            throw;
+
+            httpContext.Response.StatusCode = 500;
+            await httpContext.Response.WriteAsync("An error occurred while processing your request.");
         }
     }
 }

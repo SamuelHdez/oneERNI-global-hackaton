@@ -2,13 +2,13 @@
 
 public interface IRobotService
 {
-    public Task Forward(int speed);
+    public Task MoveForward(int speed);
 
-    public Task Backward(int speed);
+    public Task MoveBackward(int speed);
 
     public Task SetDirection(int angle);
 
-    public Task SetDirectionLeft(int angle);
+    public Task MoveLeft();
 
-    public Task SetDirectionRigth(int angle);
+    public Task MoveRight();
 }

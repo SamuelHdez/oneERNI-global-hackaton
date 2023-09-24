@@ -8,6 +8,7 @@
     <SpaProxyServerUrl>https://localhost:44474</SpaProxyServerUrl>
     <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>3f826d4d-3f27-47cf-957e-3efd50cac7dd</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,6 +26,10 @@
     <ProjectReference Include="..\RobotController.Domain\RobotController.Domain.csproj" />
     <ProjectReference Include="..\RobotController.Services\RobotController.Services.csproj" />
     <ProjectReference Include="..\RobotController.Infrastructure\RobotController.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Middleware\" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

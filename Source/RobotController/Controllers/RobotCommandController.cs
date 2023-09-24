@@ -33,28 +33,28 @@ namespace RobotController.Controllers
         [HttpPost("forward")]
         public async Task<IActionResult> MoveForward([FromBody] SpeedDto speedDto)
         {
-            await _robotService.Forward(speedDto.Speed);
+            await _robotService.MoveForward(speedDto.Speed);
             return Ok();
         }
 
         [HttpPost("backward")]
         public async Task<IActionResult> MoveBackward([FromBody] SpeedDto speedDto)
         {
-            await _robotService.Backward(speedDto.Speed);
+            await _robotService.MoveBackward(speedDto.Speed);
             return Ok();
         }
 
         [HttpPost("left")]
         public async Task<IActionResult> MoveLeft([FromBody] AngleDto angleDto)
         {
-            await _robotService.SetDirectionLeft(-angleDto.Angle);
+            await _robotService.MoveLeft();
             return Ok();
         }
 
         [HttpPost("right")]
         public async Task<IActionResult> MoveRight([FromBody] AngleDto angleDto)
         {
-            await _robotService.SetDirectionRigth(angleDto.Angle);
+            await _robotService.MoveRight();
             return Ok();
         }
     }

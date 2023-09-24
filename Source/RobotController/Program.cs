@@ -1,6 +1,7 @@
 using RobotController.Services;
 using RobotController.Services.Hubs;
 using RobotController.Infrastructure.Configuration;
+using RobotController;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient<RobotService>();
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

@@ -1,9 +1,7 @@
-﻿
-using System.Net.Http.Headers;
-using System.Net.Http.Json;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using RobotController.Domain;
 using RobotController.Infrastructure.Configuration;
+using System.Net.Http.Json;
 
 namespace RobotController.Services;
 
@@ -20,19 +18,20 @@ public class RobotService : IRobotService
         _baseUrl = _robotApiOptions.BaseUrl ?? throw new ArgumentNullException(nameof(_robotApiOptions.BaseUrl));
     }
 
-    public async Task Backward(int speed)
+    public async Task MoveBackward(int speed)
     {
-        var speedModel = new SpeedDto { Speed = speed };
-       // await _httpClient.PostAsJsonAsync($"{_baseUrl}/backward", speedModel);
-        await _httpClient.GetAsync("https://jdarknessdomains.ddns.net:9800/rear");
-
+        // var speedModel = new SpeedDto { Speed = speed };
+        // await _httpClient.PostAsJsonAsync($"{_baseUrl}/backward", speedModel);
+        using var response = await _httpClient.PostAsync($"{_baseUrl}/rear", null);
+        response.EnsureSuccessStatusCode();
     }
 
-    public async Task Forward(int speed)
+    public async Task MoveForward(int speed)
     {
-        var speedModel = new SpeedDto { Speed = speed };
-        //await _httpClient.PostAsJsonAsync($"{_baseUrl}/forward", speedModel);
-        await _httpClient.GetAsync("https://jdarknessdomains.ddns.net:9800/front");
+        // var speedModel = new SpeedDto { Speed = speed };
+        // await _httpClient.PostAsJsonAsync($"{_baseUrl}/forward", speedModel);
+        using var response = await _httpClient.PostAsync($"{_baseUrl}/front", null);
+        response.EnsureSuccessStatusCode();
     }
 
     public async Task SetDirection(int angle)
@@ -41,13 +40,15 @@ public class RobotService : IRobotService
         await _httpClient.PostAsJsonAsync($"{_baseUrl}/direction", angleModel);
     }
 
-    public async Task SetDirectionLeft(int angle)
+    public async Task MoveLeft()
     {
-        await _httpClient.GetAsync("https://jdarknessdomains.ddns.net:9800/left");
+        using var response = await _httpClient.PostAsync($"{_baseUrl}/left", null);
+        response.EnsureSuccessStatusCode();
     }
 
-    public async Task SetDirectionRigth(int angle)
+    public async Task MoveRight()
     {
-        await _httpClient.GetAsync("https://jdarknessdomains.ddns.net:9800/right");
+        using var response = await _httpClient.PostAsync($"{_baseUrl}/right", null);
+        response.EnsureSuccessStatusCode();
     }
 }
