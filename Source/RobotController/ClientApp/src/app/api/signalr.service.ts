@@ -12,8 +12,8 @@ export class SignalrService {
     hubConnectionEvent: BehaviorSubject<ConnectionEvent>;
 
     constructor(@Inject('BASE_URL') private baseUrl: string) {
-       // this.hubUrl = this.baseUrl + 'hub';
-         this.hubUrl = 'https://localhost:7018/hub';
+        this.hubUrl = this.baseUrl + 'hub';
+        //  this.hubUrl = 'https://localhost:7018/hub';
         this.hubConnectionEvent = new BehaviorSubject<ConnectionEvent>(new ConnectionEvent());
     }
 
