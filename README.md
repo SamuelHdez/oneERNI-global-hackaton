@@ -2,13 +2,17 @@
 
 ## Description
 
-This repository contains the code for the oneERNI global hackathon project. (Add more details about the purpose and functionality of the project here).
+This repository contains the code for the oneERNI global hackathon project.
 
-## Technologies Used
+## Technologies Used for Web Application
 
 - Programming Language: C#
 - Frontend Framework: Angular 15
 - Backend Framework: .NET 7
+
+## Technologies Used for Robot side
+
+- Programming Language: Python
 
 ## Getting Started
 
@@ -31,7 +35,9 @@ This repository contains the code for the oneERNI global hackathon project. (Add
    ```sh
    npm install
    ```
-4. Run the project (add specific instructions if there are any).
+4. Restore NuGet packages
+
+5. Run the project
 
 ## Usage
 
