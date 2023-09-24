@@ -20,24 +20,24 @@
           <div class="grid">
             <div class="cell invisible"></div>
             <div class="cell" id="up" [ngClass]="{'pressed': this.forwardKeyPressed}"
-              (mousedown)="this.pressMoveForward()" (mouseup)="this.forwardKeyPressed = false">↑</div>
+              (mousedown)="this.pressMoveForward()" (mouseup)="this.forwardKeyPressed = false">W</div>
             <div class="cell invisible"></div>
 
             <div class="cell" id="left" [ngClass]="{'pressed': this.leftKeyPressed}" (mousedown)="this.pressMoveLeft()"
-              (mouseup)="this.leftKeyPressed = false">←</div>
+              (mouseup)="this.leftKeyPressed = false">A</div>
             <div class="cell" id="down" [ngClass]="{'pressed': this.backwardKeyPressed}"
-              (mousedown)="this.pressMoveBackward()" (mouseup)="this.backwardKeyPressed = false">↓</div>
+              (mousedown)="this.pressMoveBackward()" (mouseup)="this.backwardKeyPressed = false">S</div>
             <div class="cell" id="right" [ngClass]="{'pressed': this.rigthKeyPressed}"
-              (mousedown)="this.pressMoveRight()" (mouseup)="this.rigthKeyPressed = false">→</div>
+              (mousedown)="this.pressMoveRight()" (mouseup)="this.rigthKeyPressed = false">D</div>
           </div>
           <div class="how-to-info">
             You can control the robot by pressing the keys on your keyboard <br /> or by clicking on the keys on the
             interface.
             <ul>
-              <li>↑ or W: Move forward</li>
-              <li>↓ or S: Move backward</li>
-              <li>← or A: Move to the left</li>
-              <li>→ or D: Move to the right</li>
+              <li>W: Move forward</li>
+              <li>S: Move backward</li>
+              <li>A: Move to the left</li>
+              <li>D: Move to the right</li>
             </ul>
           </div>
 
