@@ -83,11 +83,15 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Samuel Hdez - [@SamuelHdez](https://github.com/SamuelHdez)
-Carmen Avram - [@carmenavram](https://github.com/carmenavram)
-Andrés Vázquez - [@AndresVazqz](https://github.com/AndresVazqz)
-Ferran Balaguer
-David Soto
+- Samuel Hdez - [@SamuelHdez](https://github.com/SamuelHdez)
+
+- Carmen Avram - [@carmenavram](https://github.com/carmenavram)
+
+- Andrés Vázquez - [@AndresVazqz](https://github.com/AndresVazqz)
+
+- Ferran Balaguer
+
+- David Soto
 
 
 Project Link: [https://github.com/SamuelHdez/oneERNI-global-hackaton](https://github.com/SamuelHdez/oneERNI-global-hackaton)
