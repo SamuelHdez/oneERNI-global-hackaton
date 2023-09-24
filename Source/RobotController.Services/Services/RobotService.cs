@@ -7,6 +7,7 @@ namespace RobotController.Services;
 
 public class RobotService : IRobotService
 {
+    private const int ConnectionTimeoutInSeconds = 1;
     private readonly RobotApiOptions _robotApiOptions;
     private readonly HttpClient _httpClient;
     private readonly string _baseUrl;
@@ -15,6 +16,7 @@ public class RobotService : IRobotService
     {
         _robotApiOptions = robotApiOptions?.Value ?? throw new ArgumentNullException(nameof(robotApiOptions)); ;
         _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+        _httpClient.Timeout = TimeSpan.FromSeconds(ConnectionTimeoutInSeconds);
         _baseUrl = _robotApiOptions.BaseUrl ?? throw new ArgumentNullException(nameof(_robotApiOptions.BaseUrl));
     }
 
@@ -54,7 +56,6 @@ public class RobotService : IRobotService
 
     public async Task KeepAlive()
     {
-        _httpClient.Timeout = TimeSpan.FromSeconds(1);
         using var response = await _httpClient.GetAsync($"{_baseUrl}/keepalive");
         response.EnsureSuccessStatusCode();
     }
