@@ -8,6 +8,8 @@ namespace RobotController.Domain.Models
 
         public DateTime DateTime { get; set; }
 
+        public ConnectionEvent() { }
+
         public ConnectionEvent(ConnectionEventDto connectionEventDto)
         {
             this.IsConnected = connectionEventDto.IsConnected;
