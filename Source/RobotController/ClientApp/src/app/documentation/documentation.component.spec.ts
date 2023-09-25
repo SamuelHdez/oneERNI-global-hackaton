@@ -1,34 +1,24 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DocumentationComponent } from './documentation.component';
 
 describe('DocumentationComponent', () => {
+  let component: DocumentationComponent;
   let fixture: ComponentFixture<DocumentationComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [DocumentationComponent]
     })
       .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DocumentationComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should display a title', async(() => {
-    const titleText = fixture.nativeElement.querySelector('h1').textContent;
-    expect(titleText).toEqual('Counter');
-  }));
-
-  it('should start with count 0, then increments by 1 when clicked', async(() => {
-    const countElement = fixture.nativeElement.querySelector('strong');
-    expect(countElement.textContent).toEqual('0');
-
-    const incrementButton = fixture.nativeElement.querySelector('button');
-    incrementButton.click();
-    fixture.detectChanges();
-    expect(countElement.textContent).toEqual('1');
-  }));
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });

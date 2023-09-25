@@ -10,7 +10,7 @@ import { TeamMember } from '../models/TeamMember.model';
 export class AboutComponent {
 
   public teamMembers: TeamMember[] = [];
-  
+
   public constructor(private readonly aboutService: AboutServiceApi) {
     aboutService.getAllTeamMembers().subscribe((data) => {
       this.teamMembers = data;

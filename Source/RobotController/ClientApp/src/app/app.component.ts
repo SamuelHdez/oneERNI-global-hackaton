@@ -1,6 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import * as signalR from '@microsoft/signalr';
-import { HubConnection, HubConnectionBuilder } from '@microsoft/signalr';
+import { Component, OnInit } from '@angular/core';
 import { SignalrService } from './api/signalr.service';
 
 @Component({
@@ -14,16 +12,15 @@ export class AppComponent implements OnInit {
 
   constructor(public signalrService: SignalrService) {
     this.hubHelloMessage = '';
-    
   }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this.signalrService.connection
       .invoke('Hello')
       .catch((error: any) => {
         console.log(`SignalrDemoHub.Hello() error: ${error}`);
         alert('SignalrDemoHub.Hello() error!, see console for details.');
       }
-    );
+      );
   }
 }

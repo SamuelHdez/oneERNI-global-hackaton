@@ -6,9 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./documentation.component.scss'],
 })
 export class DocumentationComponent {
-  public currentCount = 0;
 
-  public incrementCounter() {
-    this.currentCount++;
+  public constructor() {
+    // Nothing to do here
   }
 }

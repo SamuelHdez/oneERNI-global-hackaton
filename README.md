@@ -1,4 +1,4 @@
-# oneERNI-global-hackaton
+# oneERNI-global-hackaton divertiteam
 
 ## Description
 
@@ -38,6 +38,12 @@ This repository contains the code for the oneERNI global hackathon project.
 4. Restore NuGet packages
 
 5. Run the project
+
+### Testing
+
+- Angular Testing with Karma/Jasmine: 47 tests.
+
+- .NET Testing with XUnit: 19 tests.
 
 ## Documentation
 
