@@ -57,17 +57,17 @@ You can access to the Website here: [https://divertiteam-hackaton.azurewebsites.
 You can control the robot and camera by pressing the keys on your keyboard or by clicking on the keys on the interface.
 
 ROBOT
-W: Move forward
-S: Move backward
-A: Move to the left
-D: Move to the right
+- W: Move forward
+- S: Move backward
+- A: Move to the left
+- D: Move to the right
 
 CAMERA
-↑: Look up
-↓: Look down
-←: Look to the left
-→: Look to the right
-SPACE: Center the camera
+- ↑: Look up
+- ↓: Look down
+- ←: Look to the left
+- →: Look to the right
+- SPACE: Center the camera
 
 ### Recording controls
 You can save manually made routes and then send the order to the robot to repeat it automatically. To do this, you can use the buttons under the camera.
