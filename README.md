@@ -47,6 +47,9 @@ This repository contains the code for the oneERNI global hackathon project.
 
 ## Documentation
 
+You can access to the Website here: [https://divertiteam-hackaton.azurewebsites.net/](https://divertiteam-hackaton.azurewebsites.net).
+
+
 ### Architecture
 ![alt text](https://github.com/SamuelHdez/oneERNI-global-hackaton-divertiteam/blob/main/Diagrams/Arch.png?raw=true)
 
@@ -100,4 +103,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 - David Soto
 
 
-Project Link: [https://github.com/SamuelHdez/oneERNI-global-hackaton](https://github.com/SamuelHdez/oneERNI-global-hackaton)
+Project Link: [https://github.com/SamuelHdez/oneERNI-global-hackaton-divertiteam](https://github.com/SamuelHdez/oneERNI-global-hackaton-divertiteam)
