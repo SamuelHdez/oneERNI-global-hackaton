@@ -21,7 +21,7 @@ public class ExceptionMiddleware
         {
             _logger.LogError(ex, "An unhandled exception has occurred while executing the request.");
 
-            httpContext.Response.StatusCode = 500;
+            httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
             await httpContext.Response.WriteAsync("An error occurred while processing your request.");
         }
     }

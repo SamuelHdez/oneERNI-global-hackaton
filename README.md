@@ -2,7 +2,7 @@
 
 ## Description
 
-This repository contains the code for the oneERNI global hackathon project.
+This repository contains the code for the oneERNI global hackathon divertiteam project.
 
 ## Technologies Used for Web Application
 
@@ -25,7 +25,7 @@ This repository contains the code for the oneERNI global hackathon project.
 
 1. Clone the repository
    ```sh
-   git clone https://github.com/SamuelHdez/oneERNI-global-hackaton.git
+   git clone https://github.com/SamuelHdez/oneERNI-global-hackaton-divertiteam.git
    ```
 2. Navigate to the project folder
    ```sh
@@ -43,26 +43,29 @@ This repository contains the code for the oneERNI global hackathon project.
 
 - Angular Testing with Karma/Jasmine: 47 tests.
 
-- .NET Testing with XUnit: 19 tests.
+- .NET Testing with xUnit: 19 tests.
 
 ## Documentation
 
 You can access to the Website here: [https://divertiteam-hackaton.azurewebsites.net/](https://divertiteam-hackaton.azurewebsites.net).
 
-
 ### Architecture
+
 ![alt text](https://github.com/SamuelHdez/oneERNI-global-hackaton-divertiteam/blob/main/Diagrams/Arch.png?raw=true)
 
 ### How to manage the robot
+
 You can control the robot and camera by pressing the keys on your keyboard or by clicking on the keys on the interface.
 
 ROBOT
+
 - W: Move forward
 - S: Move backward
 - A: Move to the left
 - D: Move to the right
 
 CAMERA
+
 - ↑: Look up
 - ↓: Look down
 - ←: Look to the left
@@ -70,6 +73,7 @@ CAMERA
 - SPACE: Center the camera
 
 ### Recording controls
+
 You can save manually made routes and then send the order to the robot to repeat it automatically. To do this, you can use the buttons under the camera.
 
 - ⏺️ Record: Recording begins. Once the recording is running you can move the robot. The system will save all movements from that point on.
@@ -101,6 +105,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 - Ferran Balaguer
 
 - David Soto
-
 
 Project Link: [https://github.com/SamuelHdez/oneERNI-global-hackaton-divertiteam](https://github.com/SamuelHdez/oneERNI-global-hackaton-divertiteam)
