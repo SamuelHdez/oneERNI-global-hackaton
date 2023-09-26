@@ -24,10 +24,11 @@ recording=False
 def index():
     return ok_response()
     
-@app.route('/keepalive')
+@app.route('/keepalive') # Use this method to check if the robot is connected to internet and reachable.
 def keepalive():
     return ok_response()
-@app.route('/talk', methods=['POST'])
+    
+@app.route('/talk', methods=['POST']) # Use this method to send a phrase and make the robot say it 
 def talk():
     try:
         texto = request.data.decode('utf-8')
@@ -39,15 +40,17 @@ def talk():
     except Exception as e:
         print("Error"+str(e))
         return nok_response()
-@app.route('/startrecording', methods=['POST'])
+        
+@app.route('/startrecording', methods=['POST']) # Use this method to start recording robot movements.
 def startrecording():
     global recording
     global temprace
     recording=True
-    ruta_archivo = '/tmp/temproute'  # Reemplaza con la ruta y nombre de archivo deseado
+    ruta_archivo = '/tmp/temproute'  
     temprace = open(ruta_archivo, 'w')
     return ok_response()
-@app.route('/endrecording', methods=['POST'])
+    
+@app.route('/endrecording', methods=['POST']) # Use this method to stop recording robot movements.
 def endrecording():
     global recording
     global temprace
@@ -55,7 +58,8 @@ def endrecording():
     if temprace is not None:
         temprace.close()
     return ok_response()
-@app.route('/playlastrecordedrace', methods=['POST'])
+    
+@app.route('/followline', methods=['POST']) # Use this method to make the Robot follow a black line in the floor.
 def followline():
     front=0
     left=0
@@ -94,7 +98,7 @@ def followline():
     return ok_response() 
 
 
-@app.route('/playlastrecordedrace')
+@app.route('/playlastrecordedrace') # Use this method to replay the last recorded robot movements.
 def playlastrecordedrace():
     global blocked 
     
@@ -126,7 +130,7 @@ def playlastrecordedrace():
         blocked=False
     return ok_response()        
 
-@app.route('/rear', methods=['POST'])
+@app.route('/rear', methods=['POST']) # Move robot backwards
 def rear():
     global blocked 
     if blocked==False:
@@ -141,7 +145,8 @@ def rear():
         px.set_motor_speed(1, 0)
         blocked=False
     return ok_response()
-@app.route('/front', methods=['POST'])
+    
+@app.route('/front', methods=['POST']) # Move robot forward
 def front():
     global blocked 
     if blocked==False:
@@ -156,7 +161,8 @@ def front():
         px.set_motor_speed(1, 0)
         blocked=False
     return ok_response()
-@app.route('/left', methods=['POST'])
+    
+@app.route('/left', methods=['POST']) # Turn Robot to left
 def left():
     global blocked 
     if blocked==False:
@@ -172,7 +178,8 @@ def left():
         time.sleep(3/16)
         blocked=False
     return ok_response()
-@app.route('/right', methods=['POST'])
+    
+@app.route('/right', methods=['POST']) # Turn Robot to right
 def right():
     global blocked 
     if blocked==False:
@@ -188,7 +195,8 @@ def right():
         time.sleep(3/16)
         blocked=False
     return ok_response()
-@app.route('/cup', methods=['POST'])
+    
+@app.route('/cup', methods=['POST']) # Move camera up
 def cup():
     global cameraposy 
     global cblocked 
@@ -200,7 +208,8 @@ def cup():
         print (cameraposy)
         cblocked=False
     return ok_response()
-@app.route('/cdown', methods=['POST'])
+    
+@app.route('/cdown', methods=['POST']) # Move camera down
 def cdown():
     global cameraposy  
     global cblocked 
@@ -212,7 +221,8 @@ def cdown():
         print (cameraposy)
         cblocked=False
     return ok_response()
-@app.route('/cleft', methods=['POST'])
+    
+@app.route('/cleft', methods=['POST']) # Move camera left
 def cleft():
     global cameraposx 
     global cblocked 
@@ -224,7 +234,8 @@ def cleft():
         print (cameraposx)
         cblocked=False
     return ok_response()
-@app.route('/cright', methods=['POST'])
+    
+@app.route('/cright', methods=['POST']) # Move camera right
 def cright():
     global cameraposx 
     global cblocked 
@@ -236,7 +247,8 @@ def cright():
         time.sleep(0.01)
         cblocked=False
     return ok_response()
-@app.route('/ccenter', methods=['POST'])
+    
+@app.route('/ccenter', methods=['POST']) # Center camera
 def ccenter():
     global cameraposx 
     global cameraposy
@@ -252,7 +264,7 @@ def ccenter():
         cblocked=False
     return ok_response()
 
-def generate_frames():
+def generate_frames(): # Set up Camera capture & stream settings
     with picamera.PiCamera() as camera:
         camera.resolution = (320, 240)
         camera.framerate = 5
@@ -266,23 +278,21 @@ def generate_frames():
                 stream.seek(0)
                 stream.truncate()
 
-@app.route('/video_feed')
+@app.route('/video_feed')  # Publish camera stream
 def video_feed():
     return Response(generate_frames(),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
+
 def ok_response():
-
     return Response(status=200)
+
 def nok_response():
-
     return Response(status=500)
-if __name__ == '__main__':
 
+if __name__ == '__main__':
     blocked=False
     px = Picarx()
     engine = pyttsx3.init()
-
-   
     px.set_camera_tilt_angle(0)
     px.set_cam_pan_angle(0)
     app.run(host='0.0.0.0', port=8000, debug=True, ssl_context=('/etc/letsencrypt/live/jdarknessdomains.ddns.net/fullchain.pem','/etc/letsencrypt/live/jdarknessdomains.ddns.net/privkey.pem'))
