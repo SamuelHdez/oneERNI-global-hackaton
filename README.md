@@ -27,6 +27,7 @@ This repository contains the code for the oneERNI global hackathon divertiteam p
    - Replay recorded movement
    - Follow line (follows a black line in the floor)
    - Video stream (Stream video from front Robot camera)
+   - Robot alive signal (To know if the Robot is online)
    - Https communications.
      
 ## Getting Started
