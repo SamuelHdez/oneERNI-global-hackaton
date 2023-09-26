@@ -13,7 +13,21 @@ This repository contains the code for the oneERNI global hackathon divertiteam p
 ## Technologies Used for Robot side
 
 - Programming Language: Python
-
+   - Flask
+   - Flask-Talisman (For https)
+- Dyndns (for robot public IP  Address finding)
+- NoIP  (For keep IP & Name syncronized)
+- Let's Encrypt CertBot (To generate TLS certificates)
+  
+- Features:
+   - Robot movement controls (Left, right, forward, backward)
+   - Camera movement controls (Left, right, up, down, center)
+   - Talk (send string to make the robot talk)
+   - Record movement
+   - Replay recorded movement
+   - Follow line (follows a black line in the floor)
+   - Video stream (Stream video from front Robot camera)
+     
 ## Getting Started
 
 ### Prerequisites
