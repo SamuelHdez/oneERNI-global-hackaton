@@ -23,7 +23,7 @@ This repository contains the code for the oneERNI global hackathon divertiteam p
    - Robot movement controls (Left, right, forward, backward)
    - Camera movement controls (Left, right, up, down, center)
    - Talk (send string to make the robot talk)
-   - Record movement
+   - Record movement (start/stop recording)
    - Replay recorded movement
    - Follow line (follows a black line in the floor)
    - Video stream (Stream video from front Robot camera)
