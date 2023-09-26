@@ -119,6 +119,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 - Ferran Balaguer
 
-- David Soto
+- David Soto - [@DavidSotoDalmau](https://github.com/DavidSotoDalmau)
 
 Project Link: [https://github.com/SamuelHdez/oneERNI-global-hackaton-divertiteam](https://github.com/SamuelHdez/oneERNI-global-hackaton-divertiteam)
